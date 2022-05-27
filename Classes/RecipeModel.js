@@ -2,9 +2,12 @@ class recipe {
     image = "";
     title = "";
     description = "";
-    recipeWritten = "";
+    recipeWritten = [];
     recipeVideo = "";
     type = "";
+    regionID = 0;
+    
+    
     constructor(image, title, description, recipeWritten, recipeVideo, type){
         this.image = image;
         this.title = title;
