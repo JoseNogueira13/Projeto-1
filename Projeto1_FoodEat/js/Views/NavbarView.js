@@ -5,8 +5,8 @@ function navbarView() {
     User.init();
 
     let result =`
-    <a class= "navbarLogo ml-2" href="../index.html">
-            <img src="./media/FOODEAT1.png" style="height:100px; width:300px; margin-left: 15px;">
+    <a class= "navbarLogo ml-2" href="./index.html">
+            <img src="./media/FOODEAT1.png" style="height:100px; width:300px; margin-left: 15px;"/>
     </a>
         
         <button class="btn btn-primary" type="button">HOME</button>
@@ -42,23 +42,45 @@ document.querySelector("#frmLogin").addEventListener("submit",(event) => {
             document.getElementById("txtUsername").value,
             document.getElementById("txtPassword").value,
         );
-        signupMessage("msgLogin", "User logged in with sucess!", "sucess");
+        signupMessage("msgLogin", "User logged in with sucess!", "success");
 
         setTimeout(() => {
             location.reload();
         }, 1000);
-    }catch (error)  {
-        signupMessage("msgLogin", error.message, "danger");
+    }catch (e)  {
+        signupMessage("msgLogin", e.message, "danger");
+    }
+})
+//BOTAO DE REGISTER
+document.querySelector("#frmRegister").addEventListener("submit",(event) => {
+    event.preventDefault();
+    
+    const registerUsername = document.getElementById("txtUsernameRegister");
+    const registerPassword = document.getElementById("txtPasswordRegister");
+    const registerPasswordConfirm = document.getElementById("txtPasswordRegisterConfirm");
+    const emailRegister = document.getElementById("txtEmailRegister");
+    try {
+        if (registerPassword.value !== registerPasswordConfirm.value) {
+            throw Error("The passwords do not match");
+        }
+        User.registerUser(registerUsername.value, registerPassword.value, emailRegister.value);
+        signupMessage("msgRegister", "Registration successfull!", "success");
+        setTimeout(() => {
+           location.reload(); 
+        }, 1000);
+    } catch (e) {
+        signupMessage("msgRegister", e.message, "danger")
     }
 })
 }
 
 function signupMessage(modal, message, type) {
     const divMessage = document.getElementById(modal);
-    divMessage.innerHTML = `<div class = "alert alert-${type}" role = "alert"> ${message}</div>`;
+    divMessage.innerHTML = `<div class= "alert alert-${type}" role="alert">${message}</div>`;
     setTimeout(() => {
-        divMessage.innerHTML = ""
-    }, 1000);
+      divMessage.innerHTML = "";
+    }, 2000);
+
 }
 
 navbarView();
