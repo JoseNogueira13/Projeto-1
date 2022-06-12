@@ -1,11 +1,11 @@
 class Region {
-    id = 0;
     title = "";
     image = "";
+    color = "";
 
-    constructor(id, title, image){
-        this.id = id;
+    constructor(title, image, color) {
         this.title = title;
         this.image = image;
+        this.color = color;
     }
 }

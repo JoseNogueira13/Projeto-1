@@ -1,24 +1,3 @@
-class Recipe {
-    image = "";
-    title = "";
-    description = "";
-    recipeWritten = [];
-    recipeVideo = "";
-    type = "";
-    regionID = 0;
-    
-    
-    constructor(image, title, description, recipeWritten, recipeVideo, type, regionID) {
-        this.image = image;
-        this.title = title;
-        this.description = description;
-        this.recipeWritten = recipeWritten;
-        this.recipeVideo = recipeVideo;
-        this.type = type;
-        this.regionID = regionID;
-    }
-}
-
 let recipes;
 
 // CARREGAR RECEITAS NA LOCAL STORAGE
@@ -31,7 +10,7 @@ export function init() {
 
 export function addRecipes(image, title, description, recipeWritten, recipeVideo, type, regionID) {
     if (recipes.some((recipe) => recipe.title === title)) {
-        throw Error(`The recipe ${recipe.title} already exists!`);
+        throw Error(`The recipe ${Recipe.title} already exists!`);
     }else {
         recipes.push(new Recipe(image, title, description, recipeWritten, recipeVideo, type, regionID));
         localStorage.setItem("recipes", JSON.stringify(recipes))
@@ -60,8 +39,41 @@ export function getCurrentRecipe () {
 
 // OBTER AS RECEITAS
 
-export function getRecipes (){
+export function getRecipes () {
+   /* let filteredRecipes = recipes.filter(
+        (recipe) =>
+          (recipe.title.toLowerCase().includes(filterTitle.toLowerCase()) ||
+            filterTitle === "") &&
+          (recipe.type == filterType || filterType === "")
+      );
+    
+      filteredRecipes = isSorted
+        ? filteredRecipes.sort((a, b) => a.title.localeCompare(b.title))
+        : filteredRecipes;
+*/
     return recipes;
+}
+
+
+class Recipe {
+    image = "";
+    title = "";
+    description = "";
+    recipeWritten = "";
+    recipeVideo = "";
+    type = "";
+    regionID = "";
+    
+    
+    constructor(image, title, description, recipeWritten, recipeVideo, type, regionID) {
+        this.image = image;
+        this.title = title;
+        this.description = description;
+        this.recipeWritten = recipeWritten;
+        this.recipeVideo = recipeVideo;
+        this.type = type;
+        this.regionID = regionID;
+    }
 }
 
 
