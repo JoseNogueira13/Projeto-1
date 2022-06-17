@@ -33,6 +33,21 @@ export function registerUser(username, password, email){
     localStorage.setItem("users", JSON.stringify(users))
   }
 }
+//ADICIONAR UTILIZADOR  
+export function addUser(username, password, email, experience, badges, saved, profileType, avatar) {
+  if (users.some((user) => user.username === username)){
+    throw Error(`Username "${username}" already exists!`)
+  }else{
+    users.push(new User(username, password, email, experience, badges, saved, profileType, avatar));
+    localStorage.setItem("users", JSON.stringify(users))
+  }
+}
+
+//REMOVER UTILIZADORES
+export function removeUser(username) {
+  users = users.filter((user) => user.username !== username);
+  localStorage.setItem("users", JSON.stringify(users))
+}
 // Login do utilizador
 export function login(username, password){
   const user = users.find(
@@ -58,6 +73,10 @@ export function isLogged(){
 // buscar informação do utilizador com sessão iniciada
 export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
+}
+//OBTER UTILIZADORES
+export function getUsers () {
+  return users;
 }
 
 /*if (!localStorage.users) {

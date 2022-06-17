@@ -58,21 +58,20 @@ if (!localStorage.users) {
 if (!localStorage.regions) {
     const regions = [
         {
-            title: "Asia",
+            title: "asia",
             image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
-            color: "red",
+
         },
         {
-            title: "Africa",
+            title: "africa",
             image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
-            color: "yellow",
         },
         {
-            title: "Europe",
+            title: "europe",
             image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
-            color: "blue",
+
         },
-       /* {
+        /*{
             title: "Oceania",
             image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
             color: "blue",
