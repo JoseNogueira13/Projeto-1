@@ -1,4 +1,5 @@
 import * as User from "../Models/UserModel.js";
+import * as Region from "../models/RegionModel.js";
 
 function navbarView() {
     console.log("iniciei");
@@ -11,15 +12,14 @@ function navbarView() {
             <img src="./media/FOODEAT1.png" style="height:100px; width:300px; margin-left: 15px;"/>
     </a>
         
-        <button class="btn btn-primary" type="button">HOME</button>
-        <button class="btn btn-primary" type="button">RECIPES</button>
+        <button class="btn btn-primary" type="button" id = "btnHome">HOME</button>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             REGIONS
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 500px;">`
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 385px;">`
           
           for (const region of JSON.parse(localStorage.regions)) {
-            result += `<li><a class="dropdown-item" href="./html/Recipes.html">${region.title}</a></li>`
+            result += `<li><a class="dropdown-item regionA" href="./html/region.html">${region.title}</a></li>`
           }
           result += ` 
           </ul>`
@@ -35,17 +35,19 @@ function navbarView() {
                 <li><a class="dropdown-item" href="./html/manageRecipes.html">Recipe</a></li>
                 <li><a class="dropdown-item" href="./html/manageUsers.html">Users</a></li>
                 <li><a class="dropdown-item" href="./html/manageRegions.html">Regions</a></li>
+                <li><a class="dropdown-item" href="./html/manageQuizzes.html">Quizzes</a></li>
             </ul>
         
             `
         }
         result += `
-        <button id="btnUser" class="btn btn-primary" type="button">
-            <img src="${User.getUserLogged().avatar}">
+        <button id="btnUser" class="btn btn-primary" type="button">${User.getUserLogged().username}
+            <img src="${User.getUserLogged().avatar}" height="20px" width="20px">
         </button>
         <button id="btnLogout" class="btn btn-outline-success m-2 my-sm-0">
                             Logout
-        </button>`
+        </button>
+        <p>Experience: ${User.getUserLogged().experience}</p>`
     }   else {
         result += `
         <button id="btnUserLogin" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlLogin">Login</button>
@@ -104,6 +106,28 @@ try {
   });
 } catch (error) {
     
+}
+
+// CLICAR NO BOTAO HOME
+
+document.querySelector("#btnHome").addEventListener('click', function () {
+    location.href = "./index.html"
+})
+
+
+// CLICAR NO BOTAO PROFILE
+
+document.querySelector("#btnUser").addEventListener('click', function () {
+    location.href = "./html/profile.html"
+})
+
+const regionButton = document.getElementsByClassName("regionA");
+for (const a of regionButton) {
+
+    a.addEventListener("click", () => {
+        
+        Region.setCurrentRegion(a.innerHTML);
+    })
 }
 
 }

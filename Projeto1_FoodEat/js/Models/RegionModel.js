@@ -35,6 +35,7 @@ export function removeRegion(title) {
 //DEFINIR REGIAO ATUAL
 
 export function setCurrentRegion(title) {
+    console.log("fiz set");
     localStorage.setItem("region", title);
 }
 

@@ -32,13 +32,16 @@ Recipe.init();
 
 function startQuizz () {
   Quizz.init();
+  
+  
 
   const quizz = Quizz.getCurrentQuizz();
-
+  
   
   
   try {
     document.querySelector('#quizzTitle').innerHTML = quizz.title;
+    document.querySelector('#quizzQuestion').innerHTML = quizz.question
     document.querySelector('#answer1').innerHTML = quizz.answer1;
     document.querySelector('#answer2').innerHTML = quizz.answer2;
     document.querySelector('#answer3').innerHTML = quizz.answer3;
@@ -55,13 +58,6 @@ function startQuizz () {
 startQuizz()
 
 recipeView();
-
-try {
-  
-} catch (error) {
-  
-}
-
 
 if (User.isLogged()) {
   for (let user of users) {
@@ -82,13 +78,12 @@ if (User.isLogged()) {
               console.log(document.getElementsByClassName('quizzStart'));
             
               button.disabled = false;
-              console.log("LIGA");
             }
           }
         }else{
           for (const button of document.getElementsByClassName('quizzStart')) {
             button.disabled = true;
-            console.log("DESLIGA");
+            button.innerHTML = "Quizz Completed!"
           }
         }
       }
@@ -125,6 +120,7 @@ btn1.addEventListener('click', function() {
     for (let user of users) {
       if (user.username == User.getUserLogged().username) {
         user.quizzesDone = quizzNames
+        user.experience += 100
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser))
         User.refresh(user);
@@ -137,6 +133,7 @@ btn1.addEventListener('click', function() {
     btn2.disabled = true;
     btn3.disabled = true;
     btn4.disabled = true;
+    Timeout();
     
 
 
@@ -163,6 +160,7 @@ btn2.addEventListener('click', function() {
     for (let user of users) {
       if (user.username == User.getUserLogged().username) {
         user.quizzesDone = quizzNames
+        user.experience += 100
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser))
         User.refresh(user);
@@ -174,6 +172,7 @@ btn2.addEventListener('click', function() {
     btn1.disabled = true;
     btn3.disabled = true;
     btn4.disabled = true;
+    Timeout();
   }
 })
 
@@ -196,6 +195,7 @@ btn3.addEventListener('click', function() {
     for (let user of users) {
       if (user.username == User.getUserLogged().username) {
         user.quizzesDone = quizzNames
+        user.experience += 100
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser))
         User.refresh(user);
@@ -208,6 +208,7 @@ btn3.addEventListener('click', function() {
     btn1.disabled = true;
     btn2.disabled = true;
     btn4.disabled = true;
+    Timeout();
     
   }
 })
@@ -230,6 +231,7 @@ btn4.addEventListener('click', function() {
     for (let user of users) {
       if (user.username == User.getUserLogged().username) {
         user.quizzesDone = quizzNames
+        user.experience += 100
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser))
         User.refresh(user);
@@ -242,6 +244,7 @@ btn4.addEventListener('click', function() {
     btn1.disabled = true;
     btn2.disabled = true;
     btn3.disabled = true;
+    Timeout();
     
   }
 })

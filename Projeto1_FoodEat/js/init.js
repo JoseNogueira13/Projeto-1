@@ -4,13 +4,13 @@ function initdata() {
     if(!localStorage.recipes) {
         const recipes = [
             {
-                image: "./media/EuropeEntree1.png",
+                image: "https://www.teleculinaria.pt/wp-content/uploads/2015/04/7MGeiww.jpg",
                 title: "Rissois de Camarão",
                 description: "Delicious deepfried seafood pastries!",
                 recipeWritten: "step1",
                 recipeVideo: "./media/EuropeEntree1.mp4",
                 type: "entree",
-                regionID: "asia"
+                regionID: "europe"
         
             },
             {
@@ -42,17 +42,6 @@ function initdata() {
 if (!localStorage.users) {
     const users = [
         {
-            username: "ola",
-            password: "ola",
-            email: "ola@gmail.com",
-            profileType: "user",
-            experience: 0,
-            badges: [],
-            saved: [],
-            avatar: "",
-            quizzesDone: [],
-        },
-        {
             username: "admin",
             password: "admin",
             email: "admin@example.com",
@@ -60,7 +49,7 @@ if (!localStorage.users) {
             experience: 0,
             badges: [],
             saved: [],
-            avatar: "",
+            avatar: "https://cdn1.vectorstock.com/i/1000x1000/23/70/man-avatar-icon-flat-vector-19152370.jpg",
             quizzesDone: [],
         },
         
@@ -80,11 +69,11 @@ if (!localStorage.regions) {
         },
         {
             title: "africa",
-            image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
+            image: "https://www.segurospromo.com.br/blog/wp-content/uploads/2019/04/viagem-africa-quando-ir.jpg",
         },
         {
             title: "europe",
-            image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
+            image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/1-paises-da-europa.jpg",
 
         },
         /*{
@@ -99,7 +88,6 @@ if (!localStorage.regions) {
 if (!localStorage.quizzes) {
     const quizzes = [
       {
-          image : "",
           title: "Rissois de Camarão",
           question : "Qual é a resposta?",
           answer1 : "1",
@@ -107,16 +95,27 @@ if (!localStorage.quizzes) {
           answer3 : "3",
           answer4 : "4",
           correctAnswer : "3",
+          quizzID : "0",
       },
-      {
-        image : "",
+      {  
         title: "Rissois de Carne",
         question : "Qual é a resposta?",
-        answer1 : "1",
-        answer2 : "2",
-        answer3 : "3",
-        answer4 : "4",
-        correctAnswer : "3",
+        answer1 : "5",
+        answer2 : "6",
+        answer3 : "7",
+        answer4 : "8",
+        correctAnswer : "6",
+        quizzID : "1",
+    },
+    {  
+        title: "Rissois de Carne",
+        question : "Qual é a resposta?",
+        answer1 : "9",
+        answer2 : "10",
+        answer3 : "11",
+        answer4 : "12",
+        correctAnswer : "12",
+        quizzID : "2",
     },
     ];
     localStorage.setItem("quizzes", JSON.stringify(quizzes));
