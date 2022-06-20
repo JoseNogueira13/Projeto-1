@@ -42,18 +42,34 @@ function initdata() {
 if (!localStorage.users) {
     const users = [
         {
+            username: "ola",
+            password: "ola",
+            email: "ola@gmail.com",
+            profileType: "user",
+            experience: 0,
+            badges: [],
+            saved: [],
+            avatar: "",
+            quizzesDone: [],
+        },
+        {
             username: "admin",
             password: "admin",
             email: "admin@example.com",
-            experience: "0",
+            profileType: "admin",
+            experience: 0,
             badges: [],
             saved: [],
-            profileType: "admin",
             avatar: "",
-        }
+            quizzesDone: [],
+        },
+        
+
     ]    
     localStorage.setItem("users", JSON.stringify(users));
 }
+
+
 
 if (!localStorage.regions) {
     const regions = [
@@ -79,3 +95,30 @@ if (!localStorage.regions) {
     ]    
     localStorage.setItem("regions", JSON.stringify(regions));
 }
+
+if (!localStorage.quizzes) {
+    const quizzes = [
+      {
+          image : "",
+          title: "Rissois de Camarão",
+          question : "Qual é a resposta?",
+          answer1 : "1",
+          answer2 : "2",
+          answer3 : "3",
+          answer4 : "4",
+          correctAnswer : "3",
+      },
+      {
+        image : "",
+        title: "Rissois de Carne",
+        question : "Qual é a resposta?",
+        answer1 : "1",
+        answer2 : "2",
+        answer3 : "3",
+        answer4 : "4",
+        correctAnswer : "3",
+    },
+    ];
+    localStorage.setItem("quizzes", JSON.stringify(quizzes));
+    
+  }

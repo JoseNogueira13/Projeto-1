@@ -2,21 +2,26 @@ class User {
     username = "";
     password = "";
     email = "";
+    profileType = "";
     experience = 0;
     badges = [];
     saved = [];
-    profileType = "";
-    avatar = "";
     
-    constructor(username, password, email, experience, badges, saved, profileType, avatar) {
+    avatar = "";
+    quizzesDone = []
+    
+    
+    constructor(username, password, email,profileType, experience, badges, saved,  avatar, quizzesDone) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.profileType = profileType;
         this.experience = experience;
         this.badges = badges;
         this.saved = saved;
-        this.profileType = profileType;
         this.avatar = avatar;
+        this.quizzesDone = quizzesDone;
+        
       }
 }
 let users;
@@ -25,20 +30,33 @@ export function init() {
   users = localStorage.users ? JSON.parse(localStorage.users) : [];
 }
 // registar utilizador
-export function registerUser(username, password, email){
+export function registerUser(username, password, email,profileType, experience, badges, saved,  avatar, quizzesDone){
   if (users.some((user) => user.username === username)){
     throw Error(`Username "${username}" already exists!`)
   }else{
-    users.push(new User(username, password, email));
+    experience = 0
+    badges = [];
+    saved = [];
+    profileType = "user";
+    avatar = "";
+    quizzesDone = []
+
+    users.push(new User(username, password, email,profileType, experience, badges, saved,  avatar, quizzesDone));
     localStorage.setItem("users", JSON.stringify(users))
   }
 }
 //ADICIONAR UTILIZADOR  
-export function addUser(username, password, email, experience, badges, saved, profileType, avatar) {
+export function addUser(username, password, email,profileType, experience, badges, saved,  avatar, quizzesDone) {
   if (users.some((user) => user.username === username)){
     throw Error(`Username "${username}" already exists!`)
   }else{
-    users.push(new User(username, password, email, experience, badges, saved, profileType, avatar));
+    experience = 0
+    badges = [];
+    saved = [];
+    avatar = "";
+    quizzesDone = []
+
+    users.push(new User(username, password, email,profileType, experience, badges, saved,  avatar, quizzesDone));
     localStorage.setItem("users", JSON.stringify(users))
   }
 }
@@ -63,6 +81,13 @@ export function login(username, password){
 // logout do utilizadores
 export function logout(){
   sessionStorage.removeItem("loggedUser");
+  
+}
+
+//REFRESH SESSION STORAGE
+export function refresh(user) {
+  sessionStorage.removeItem("loggedUser");
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
 }
 
 //verificar se existe um utilizador com sessão iniciada

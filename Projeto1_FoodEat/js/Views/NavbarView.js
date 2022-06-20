@@ -50,6 +50,7 @@ function navbarView() {
         result += `
         <button id="btnUserLogin" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlLogin">Login</button>
         <button id="btnUserRegister" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlRegister">Register</button>
+
         `
     }
     // colocar o conteudo na navbar dependendo do estado de login do utilizador
@@ -96,15 +97,16 @@ document.querySelector("#frmRegister").addEventListener("submit",(event) => {
 })
 
 // CLICAR NO BOTAO LOGOUT 
-document.querySelector("#btnLogout").addEventListener("click", () => {
+try {
+    document.querySelector("#btnLogout").addEventListener("click", () => {
     User.logout();
     location.reload();
   });
+} catch (error) {
+    
 }
 
-  
-
-
+}
 
 function signupMessage(modal, message, type) {
     const divMessage = document.getElementById(modal);

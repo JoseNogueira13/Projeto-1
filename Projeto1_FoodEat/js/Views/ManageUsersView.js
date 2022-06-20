@@ -1,9 +1,9 @@
 import * as User from "../Models/UserModel.js";
 
-document.getElementById("txtExperienceRegister").readOnly = true;
-document.getElementById("txtBadgesRegister").readOnly = true;
-document.getElementById("txtSavedRegister").readOnly = true;
-document.getElementById("txtAvatarRegister").readOnly = true;
+document.getElementById("txtExperienceAdd").readOnly = true;
+document.getElementById("txtBadgesAdd").readOnly = true;
+document.getElementById("txtSavedAdd").readOnly = true;
+document.getElementById("txtAvatarAdd").readOnly = true;
 
 
 function addUser() {
@@ -16,14 +16,11 @@ function addUser() {
 
         try{
             User.addUser(
-                document.querySelector("#txtUsernameRegister").value,
-                document.querySelector("#txtPasswordRegister").value,
-                document.querySelector("#txtEmailRegister").value,
-                document.querySelector("#txtExperienceRegister").value,
-                document.querySelector("#txtBadgesRegister").value,
-                document.querySelector("#txtSavedRegister").value,
+                document.querySelector("#txtUsernameAdd").value,
+                document.querySelector("#txtPasswordAdd").value,
+                document.querySelector("#txtEmailAdd").value,
                 document.querySelector('input[name="userType"]:checked').value,
-                document.querySelector("#txtAvatarRegister").value,
+                
             )
             alert("User was added")
             manageUsersTable(User.getUsers());

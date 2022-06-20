@@ -53,6 +53,7 @@ document.querySelector("nav").innerHTML = result;
 
 // BOTÃO DE LOGIN
 document.querySelector("#frmLogin").addEventListener("submit",(event) => {
+    console.log("WOOOOOOOOOOOOWWWWWWWWW");
     event.preventDefault();
     try {
         User.login(
@@ -93,7 +94,7 @@ document.querySelector("#frmRegister").addEventListener("submit",(event) => {
 // CLICAR NO BOTAO LOGOUT 
 document.querySelector("#btnLogout").addEventListener("click", () => {
     User.logout();
-    location.reload();
+    location.href = "../index.html";
   });
 }
 
