@@ -43,6 +43,7 @@ function renderCatalog(recipes = []) {
     const recipeEuropeDessert = recipeEurope.filter((recipe) => recipe.type == "dessert");
     
     //  RECEITAS ENTRADA/PRATO PRINCIPAL/SOBREMESA DE QUALQUER REGIAO
+    
     if (entree.length > 0) {
         result += generateCard(entree[Math.floor(Math.random() * entree.length)]);
     }
@@ -55,8 +56,9 @@ function renderCatalog(recipes = []) {
         result += generateCard(dessert[Math.floor(Math.random() * dessert.length)]);
     }
     // RECEITAS DA REGIAO "ASIA"
-
+                                        
     if (recipeAsiaEntree.length > 0) {
+        
         result += generateCard(recipeAsiaEntree[Math.floor(Math.random() * recipeAsiaEntree.length)]);
     }
 
@@ -74,7 +76,7 @@ function renderCatalog(recipes = []) {
     }
 
     if (recipeAfricaMain.length > 0) {
-        result += generateCard(recipeAsiaMain[Math.floor(Math.random() * recipeAfricaMain.length)]);
+        result += generateCard(recipeAfricaMain[Math.floor(Math.random() * recipeAfricaMain.length)]);
     }
 
     if (recipeAfricaDessert.length > 0) {
@@ -91,7 +93,7 @@ function renderCatalog(recipes = []) {
     }
 
     if (recipeEuropeDessert.length > 0) {
-        result += generateCard(recipeAsiaDessert[Math.floor(Math.random() * recipeEuropeDessert.length)]);
+        result += generateCard(recipeEuropeDessert[Math.floor(Math.random() * recipeEuropeDessert.length)]);
     }
 
     

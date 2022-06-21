@@ -5,8 +5,9 @@ function regionStart() {
     Region.init();
 
     const region = Region.getCurrentRegion();
-    console.log(region);
-    document.querySelector("#regionTitle").innerHTML = region.title;
+    
+    document.querySelector("#regionTitle").innerHTML = region.title[0].toUpperCase() + region.title.slice(1); 
+    
     document.querySelector("#regionImage").src = region.image;
 
 }
@@ -37,11 +38,20 @@ function renderCatalog(recipes = []) {
     recipeEurope = recipes.filter((recipe) => recipe.regionID == "europe");
 
     if (region.title == "asia") {
-        result += generateCard(recipeAsia[Math.floor(Math.random() * recipeAsia.length)])  
+        for (let recipe of recipeAsia) {
+            result += generateCard(recipe) 
+        }
+         
     } else if (region.title == "africa") {
-        result += generateCard(recipeAfrica[Math.floor(Math.random() * recipeAfrica.length)])
+        for (let recipe of recipeAfrica) {
+            result += generateCard(recipe)
+        }
+        
     }else if (region.title == "europe") {
-        result += generateCard(recipeEurope[Math.floor(Math.random() * recipeEurope.length)])
+        for (let recipe of recipeEurope) {
+            result += generateCard(recipe)
+        }
+        
     }
     
 

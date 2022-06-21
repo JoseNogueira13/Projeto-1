@@ -11,23 +11,16 @@ Recipe.init();
 
   const recipe = Recipe.getCurrentRecipe();
   document.querySelector("#recipeName").innerHTML = recipe.title;
-  document.querySelector("#recipeType").innerHTML = recipe.type;
+  document.querySelector("#recipeType").innerHTML = recipe.type[0].toUpperCase() + recipe.type.slice(1);
   document.querySelector("#recipeDescription").innerHTML = recipe.description;
   document.querySelector("#recipePhoto").src = recipe.image;
+  document.querySelector("#recipeWritten").innerHTML = recipe.recipeWritten
 
-  const video = document.createElement('video');
-
-  video.src ='https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4';
-
-  video.autoplay = false;
-  video.controls = true;
-  video.muted = false;
-  video.height = 240;
-  video.width = 320;
-
-  const videoElement = document.getElementById("video");
-
-  videoElement.appendChild(video);
+  
+  const video = document.querySelector('#video');
+  
+  console.log(video.src);
+  video.src = recipe.recipeVideo
 }
 
 function startQuizz () {
