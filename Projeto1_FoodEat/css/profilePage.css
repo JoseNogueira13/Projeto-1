@@ -1,0 +1,85 @@
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+
+#userProfile{
+    text-align: center;
+    font-family: Roboto;
+    width: auto;
+}
+
+hr{
+    width: 500px;
+    margin-left: 700px;
+    margin-bottom: 50px;
+}
+
+#backGround{
+    background-color: rgba(128, 128, 128, 0.281);
+    border-radius: 20px 20px 20px 20px;
+    width: 1300px;
+    height: 500px;
+    margin-left: 350px;
+}
+
+#profileUsernameLabel{
+    text-align: center;
+    font-family: Roboto;
+    width: auto;
+    margin-left: 200px;
+    margin-top: 150px;
+    font-size: 20px;
+}
+
+#profileUsername{
+    display: inline;
+    text-align: center;
+    font-family: Roboto;
+    width: auto;
+    font-size: 20px;
+}
+
+#profileEmailLabel{
+    text-align: center;
+    font-family: Roboto;
+    width: auto;
+    margin-left: 200px;
+    font-size: 20px;
+}
+
+#profileEmail{
+    display: inline;
+    text-align: center;
+    font-family: Roboto;
+    width: auto;
+    font-size: 20px;
+}
+
+#changePassBtn{
+    background-color: black;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+#profileUserAvatar{
+    width:1000px;
+    position: absolute;
+    left: 1200px;
+    top: 250px;
+}
+
+.changeAvatar{
+    width: 300px;
+}
+
+#profileImgDiv{
+    width: 300px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0);
+    margin-top: 50px;
+}
+
+#profileImg{
+    width:300px;
+}

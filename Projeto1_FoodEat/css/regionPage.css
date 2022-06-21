@@ -1,0 +1,54 @@
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+
+#myRegionCatalog{
+    margin-left: 90px;
+    margin-top: 130px;
+    width: 1800px;
+}
+
+#regionTitle{
+    text-align: center;
+    font-family: Roboto;
+}
+
+hr{
+    width: 500px;
+    margin-left: 700px;
+    margin-bottom: -20px;
+}
+
+#regionImage{
+    width: 700px;
+    padding: 50px;
+    margin-left: 600px;
+    margin-bottom: -150px;
+}
+
+.card{
+    margin-top: 30px;
+    width: 500px;
+    height: 480px;
+    outline: 2.5px grey solid;
+}
+
+.card-img-top{
+    height: 300px;
+}
+
+.card-title, .card-text{
+    font-family: Roboto;
+}
+
+.view{
+    font-family: Roboto;
+    background-color: black;
+}
+
+.view{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

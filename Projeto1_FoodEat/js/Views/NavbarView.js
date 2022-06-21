@@ -9,14 +9,14 @@ function navbarView() {
     
     let result =`
     <a class= "navbarLogo ml-2" href="./index.html">
-            <img src="./media/FOODEAT1.png" style="height:100px; width:300px; margin-left: 15px;"/>
+            <img id="logo" src="./media/FOODEAT1.png"/>
     </a>
         
         <button class="btn btn-primary" type="button" id = "btnHome">HOME</button>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             REGIONS
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 385px;">`
+          <ul id="dropDownRegion" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">`
           
           for (const region of JSON.parse(localStorage.regions)) {
             result += `<li><a class="dropdown-item regionA" href="./html/region.html">${region.title}</a></li>`
@@ -31,7 +31,7 @@ function navbarView() {
             result += `
             <button class="btn btn-secondary dropdown-toggle" type="button" id="admin" data-bs-toggle="dropdown" aria-expanded="false">MANAGE INFO
             </button>
-            <ul class="dropdown-menu" aria-labelledby="admin" style="margin-left: 500px;">
+            <ul id="dropDownManager" class="dropdown-menu" aria-labelledby="admin">
                 <li><a class="dropdown-item" href="./html/manageRecipes.html">Recipe</a></li>
                 <li><a class="dropdown-item" href="./html/manageUsers.html">Users</a></li>
                 <li><a class="dropdown-item" href="./html/manageRegions.html">Regions</a></li>
@@ -41,17 +41,17 @@ function navbarView() {
             `
         }
         result += `
-        <button id="btnUser" class="btn btn-primary" type="button">${User.getUserLogged().username}
+        <button id="btnUser" class="btn btn-secondary" type="button">${User.getUserLogged().username}
             <img src="${User.getUserLogged().avatar}" height="20px" width="20px">
         </button>
-        <button id="btnLogout" class="btn btn-outline-success m-2 my-sm-0">
+        <button id="btnLogout" class="btn btn-outline-danger m-2 my-sm-0">
                             Logout
         </button>
-        <p>Experience: ${User.getUserLogged().experience}</p>`
+        <p id="experience">Experience: ${User.getUserLogged().experience}</p>`
     }   else {
         result += `
         <button id="btnUserLogin" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlLogin">Login</button>
-        <button id="btnUserRegister" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlRegister">Register</button>
+        <button id="btnUserRegister" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mdlRegister">Register</button>
 
         `
     }

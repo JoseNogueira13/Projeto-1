@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+
+.container-fluid{
+    margin-top: 140px; 
+}
+
+#recipePageTitle{
+    text-align: center;
+    font-family: Roboto;
+    width: auto;
+}
+
+#recipeName{
+    text-align: center;
+    font-family: Roboto;
+}
+
+.recipeNameHr{
+    width: 500px;
+    margin-left: 680px;
+    margin-bottom: 50px;
+}
+
+#recipePageType{
+    text-align: center;
+    font-family: Roboto;
+    position: absolute;
+    margin-left: 650px;
+}
+
+#recipePageDescription{
+    text-align: center;
+    font-family: Roboto;
+    position: absolute;
+    margin-left: 650px;
+    margin-top: 50px;
+}
+
+#recipeDescription{
+    text-align: center;
+    font-family: Roboto;
+}
+
+#recipePageWritten{
+    text-align: center;
+    font-family: Roboto;
+    position: absolute;
+    width: 950px;
+    margin-left: 850px;
+    margin-top: -325px;
+    
+}
+
+#recipeWritten{
+    text-align: center;
+    font-family: Roboto;
+    
+}
+
+#recipePhoto{
+    width: 650px;
+    margin-left: 100px;
+    border-radius: 10px 10px 10px 10px;
+    outline: 2.5px grey solid;
+    box-shadow: 10px 10px rgba(36, 204, 247, 0.5);
+}
+
+#videoDiv{
+    margin-top: 100px;
+    margin-left: 100px;
+    width: auto;
+}
+
+#videoTitle{
+    text-align: center;
+    font-family: Roboto;
+}
+
+.videoTitleHr{
+    width: 500px;
+    margin-left: 650px;
+    margin-bottom: 50px;
+}
+
+#video{
+    width: 1000px;
+    height: 580px;
+    margin-left: 400px;
+}
+
+#btnQuizzModal{
+    margin-left: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#btnQuizzTutorialModal{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

@@ -102,14 +102,14 @@ function initdata() {
 if (!localStorage.users) {
     const users = [
         {
-            username: "admin",
+            username: "Admin",
             password: "admin",
             email: "admin@example.com",
             profileType: "admin",
             experience: 0,
             badges: [],
             saved: [],
-            avatar: "https://cdn1.vectorstock.com/i/1000x1000/23/70/man-avatar-icon-flat-vector-19152370.jpg",
+            avatar: "https://cdn-icons-png.flaticon.com/512/219/219969.png",
             quizzesDone: [],
         },
         
@@ -124,7 +124,7 @@ if (!localStorage.regions) {
     const regions = [
         {
             title: "asia",
-            image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/sia.jpg",
+            image: "https://www.segurospromo.com.br/blog/wp-content/uploads/2019/07/viagem-a-asia-740x360.jpg",
 
         },
         {
@@ -133,7 +133,7 @@ if (!localStorage.regions) {
         },
         {
             title: "europe",
-            image: "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/1-paises-da-europa.jpg",
+            image: "https://cdn.travelpulse.com/images/99999999-9999-9999-9999-999999999999/1077b51f-fef4-1a53-e20f-aa6609b0e0d3/630x355.jpg",
 
         },
         /*{

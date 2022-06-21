@@ -1,0 +1,54 @@
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+
+/* PÁGINA INICIAL */
+#myRecipeCatalog{
+    margin-left: 90px;
+    margin-top: 130px;
+    width: 1800px;
+}
+
+#title{
+    margin-left: 555px;
+    margin-top: 50px;
+    font-family: Roboto;
+}
+
+#title1{
+    margin-left: 800px;
+    margin-top: 50px;
+    font-family: Roboto;
+}
+
+hr{
+    margin-left: 550px;
+    margin-bottom: 30px;
+}
+
+.card{
+    margin-top: 30px;
+    width: 500px;
+    height: 480px;
+    outline: 2.5px grey solid;
+}
+
+.card-img-top{
+    height: 300px;
+}
+
+.card-title, .card-text{
+    font-family: Roboto;
+}
+
+.view{
+    font-family: Roboto;
+    background-color: black;
+}
+
+.view{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

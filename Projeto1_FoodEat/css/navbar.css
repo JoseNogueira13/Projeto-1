@@ -1,0 +1,68 @@
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+
+#logo{
+    height:100px;
+    width:300px;
+    margin-left: 15px; 
+}
+
+#btnHome{
+    margin-left: 500px;
+    margin-right: 10px;
+    font-family: Roboto;
+    background-color: black;
+}
+
+#dropdownMenuButton1{
+    margin-right: 10px;
+    font-family: Roboto;
+}
+
+#dropDownRegion{
+    margin-left: 898px;
+    margin-top: -40px;
+}
+
+#dropDownManager{
+    margin-left: 1400px;
+    margin-top: -40px;
+}
+
+#admin{
+    position: absolute;
+    margin-right: 10px;
+    margin-left: 1400px;
+    font-family: Roboto;
+    background-color: black;
+}
+
+#btnUser{
+    margin-right: 10px;
+    margin-left: 550px;
+    font-family: Roboto;
+}
+
+#btnLogout{
+    margin-right: 10px;
+    font-family: Roboto;
+}
+
+#btnUserLogin{
+    margin-right: 10px;
+    margin-left: 700px;
+    font-family: Roboto;
+    background-color: black;
+}
+
+#btnUserRegister{
+    margin-right: 10px;
+    font-family: Roboto;
+    
+}
+
+#experience{
+    font-family: Roboto;
+}

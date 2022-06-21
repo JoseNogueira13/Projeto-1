@@ -51,16 +51,12 @@ for (let user of users) {
     
     let result = `
     <div class="col">
-            <div class="card mb-3" style="widht: 300px;">
-                <img src="${User.getUserLogged().avatar}" class="card-img-top" style="width:300px">
-                <div class="card-body">
-                    <h5 class="card-title">${User.getUserLogged().username}</h5>
-                    <p class="card-text"></p>
-                    <button id="${User.getUserLogged().username}" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#avatarModalLabel">Choose another one!</button>`;
-
+            <div id="profileImgDiv" class="card mb-3">
+                <img src="${User.getUserLogged().avatar}" class="card-img-top" id="profileImg">
+                <p class="card-text"></p>
+                <button id="${User.getUserLogged().username}" type="button" class="btn btn-secondary changeAvatar" data-bs-toggle="modal" data-bs-target="#avatarModalLabel">Choose another one!</button>`;
 
     result += ` 
-                </div>
             </div>
         </div> `
     
