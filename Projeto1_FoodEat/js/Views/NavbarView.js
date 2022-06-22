@@ -29,7 +29,7 @@ function navbarView() {
         if (User.getUserLogged().profileType == "admin") {
             console.log('botao admin');
             result += `
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="admin" data-bs-toggle="dropdown" aria-expanded="false">MANAGE INFO
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="btnAdmin" data-bs-toggle="dropdown" aria-expanded="false">MANAGE INFO
             </button>
             <ul id="dropDownManager" class="dropdown-menu" aria-labelledby="admin">
                 <li><a class="dropdown-item" href="./html/manageRecipes.html">Recipe</a></li>
